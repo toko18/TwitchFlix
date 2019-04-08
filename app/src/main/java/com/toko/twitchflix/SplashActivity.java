@@ -15,12 +15,12 @@ public class SplashActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mostrarMainActivity();
+                showMainActivity();
             }
         }, 2000);
     }
 
-    private void mostrarMainActivity() {
+    private void showMainActivity() {
         Intent intent = new Intent(
                 SplashActivity.this,MainActivity.class
         );
