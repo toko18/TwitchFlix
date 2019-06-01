@@ -3,10 +3,11 @@ package com.toko.twitchflix;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,9 +16,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(myToolbar);
 
+        CardView watchCard = (CardView) findViewById(R.id.watch_card);
+        CardView recordCard = (CardView) findViewById(R.id.record_card);
+
+        watchCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWatchActivity();
+            }
+        });
+
+        recordCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecordActivity();
+            }
+        });
+    }
+
+    //-----------------------------------START ACTIVITIES-----------------------------------
+
+    public void openWatchActivity() {
+        Intent i = new Intent(this, WatchActivity.class);
+        this.startActivity(i);
+    }
+
+    public void openRecordActivity() {
+        Intent i = new Intent(this, RecordActivity.class);
+        this.startActivity(i);
     }
 
     //-----------------------------------OPTIONS MENU-----------------------------------
@@ -39,14 +68,13 @@ public class MainActivity extends AppCompatActivity {
                 this.startActivity(i);
                 return true;
 
+            case R.id.option_logout:
+                //Intent i = new Intent(this, SettingsActivity.class);
+                //this.startActivity(i);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void showSettings()
-    {
-        Toast settingsToast = Toast.makeText(getApplicationContext(), "Antes de mais, boa tarde. Está em SETTINGS! Parabéns. Boa tarde.", Toast.LENGTH_LONG);
-        settingsToast.show();
     }
 }

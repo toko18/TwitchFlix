@@ -3,4 +3,13 @@
     <string name="appwidget_text">Boa tarde</string>
     <string name="add_widget">Add widget</string>
     <string name="date_count_format">%1$d @%2$s</string>
+    <string name="title_activity_watch">WatchActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_livestreams">Livestreams</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="watch_livestreamsBar">"     Livestreams"</string>
+    <string name="watch_moviesBar">"     Movies"</string>
 </resources>

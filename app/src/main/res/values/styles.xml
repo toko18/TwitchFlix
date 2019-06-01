@@ -1,15 +1,59 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/backgroundColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="android:background">@color/backgroundColor</item>
+        <item name="backgroundcolor">@color/backgroundColor</item>
+        <item name="cardbackground">@color/backgroundColor2</item>
+        <item name="textcolor">@color/primaryTextColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/primaryTextColor</item>
+        <item name="android:navigationBarColor">@color/backgroundColor</item>
+        <item name="preferenceTheme">@style/PreferenceTheme</item>
+        <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
 
     </style>
 
+    <style name="PreferenceTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:layout">@layout/fragment_settings</item>
+        <item name="colorPrimary">@color/backgroundColor</item>
+        <item name="colorPrimaryDark">@color/backgroundColor</item>
+        <item name="colorAccent">@color/primaryColor</item>
+        <item name="android:background">@color/backgroundColor</item>
+        <item name="backgroundcolor">@color/backgroundColor</item>
+        <item name="cardbackground">@color/backgroundColor2</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="textcolor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:layout">@layout/fragment_settings</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/backgroundColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="android:background">@color/backgroundColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="textColorAlertDialogListItem">@color/primaryTextColor</item>
+    </style>
+
+    <style name="PopupMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/backgroundColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="android:background">@color/backgroundColor2</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:queryBackground">@color/backgroundColor2</item>
+        <item name="android:editTextColor">@color/primaryTextColor</item>
+    </style>
 
     <!-- Widget styles -->
     <style name="AppWidgetSection" parent="@android:style/Widget">
