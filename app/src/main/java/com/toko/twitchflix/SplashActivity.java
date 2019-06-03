@@ -15,14 +15,14 @@ public class SplashActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                showMainActivity();
+                showLoginActivity();
             }
         }, 2000);
     }
 
-    private void showMainActivity() {
+    private void showLoginActivity() {
         Intent intent = new Intent(
-                SplashActivity.this,MainActivity.class
+                SplashActivity.this,LoginActivity.class
         );
         startActivity(intent);
         finish();

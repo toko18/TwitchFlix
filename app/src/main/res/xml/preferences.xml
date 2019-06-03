@@ -2,38 +2,17 @@
 
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <PreferenceCategory android:title="Flight Preferences">
+        <PreferenceCategory android:title="Account Preferences">
             <CheckBoxPreference
-                android:key="wake4meals"
-                android:title="Wake for meals" />
-
-            <EditTextPreference
-                android:capitalize="words"
-                android:defaultValue="Boa tarde!"
-                android:inputType="textCapWords"
-                android:key="user_display_name"
-                android:maxLines="1"
-                android:title="Display Name" />
-
-            <ListPreference
-                android:defaultValue="-1"
-                android:entries="@array/pref_gender_items"
-                android:entryValues="@array/pref_gender_values"
-                android:key="gender"
-                android:title="Gender" />
-
+                android:key="delete_account"
+                android:title="Delete Account" />
 
         </PreferenceCategory>
 
-        <PreferenceCategory android:title="Boa tarde settings">
-            <CheckBoxPreference
-                android:key="wake4meals2"
-                android:title="Wake for meals" />
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="switch"
-                android:summary="Escolhe a música"
-                android:title="Botão de rádio" />
+    <PreferenceCategory android:title="App Preferences">
+        <CheckBoxPreference
+            android:key="about"
+            android:title="About Tyger" />
 
-        </PreferenceCategory>
+    </PreferenceCategory>
     </PreferenceScreen>

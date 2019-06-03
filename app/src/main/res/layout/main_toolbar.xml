@@ -7,6 +7,6 @@
     android:elevation="4dp"
     android:theme="@style/AppTheme"
     app:popupTheme="@style/PopupMenuStyle"
-    app:title="TwitchFlix"
+    app:title="@string/app_name"
     app:titleTextColor="@color/primaryColor"
     app:layout_constraintTop_toTopOf="parent" />

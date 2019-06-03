@@ -69,8 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.option_logout:
-                //Intent i = new Intent(this, SettingsActivity.class);
-                //this.startActivity(i);
+                Intent j = new Intent(this, LoginActivity.class);
+                this.startActivity(j);
+                finish();
                 return true;
 
             default:

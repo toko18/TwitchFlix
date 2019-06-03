@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TwitchFlix</string>
+    <string name="app_name">Tyger</string>
     <string name="appwidget_text">Boa tarde</string>
     <string name="add_widget">Add widget</string>
     <string name="date_count_format">%1$d @%2$s</string>
@@ -12,4 +12,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="watch_livestreamsBar">"     Livestreams"</string>
     <string name="watch_moviesBar">"     Movies"</string>
+    <string name="register"> <u>Register new account</u></string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="cancel"><u>Cancel</u></string>
+    <string name="about_text"><![CDATA[Created by:\nDuarte Pereira & Fábio Reis]]></string>
 </resources>

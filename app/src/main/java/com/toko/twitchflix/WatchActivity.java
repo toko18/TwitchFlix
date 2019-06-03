@@ -13,7 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WatchActivity extends AppCompatActivity {
 
@@ -47,7 +51,7 @@ public class WatchActivity extends AppCompatActivity {
                     break;
 
                     default:
-                        fragment = new WatchHomeFragment();
+                        fragment = new WatchLivestreamsFragment();
                         break;
             }
 
@@ -68,9 +72,9 @@ public class WatchActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        fragment = new WatchHomeFragment();
+        fragment = new WatchLivestreamsFragment();
         loadFragment(fragment);
-        navView.setSelectedItemId(R.id.navigation_home);
+        navView.setSelectedItemId(R.id.navigation_livestreams);
     }
 
     @Override
@@ -91,7 +95,6 @@ public class WatchActivity extends AppCompatActivity {
             }
             @Override
             public boolean onQueryTextChange(String s) {
-                // UserFeedback.show( "SearchOnQueryTextChanged: " + s);
                 return false;
             }
         });

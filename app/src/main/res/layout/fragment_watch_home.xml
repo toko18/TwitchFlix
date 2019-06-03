@@ -10,7 +10,7 @@
     tools:context=".WatchActivity">
 
     <TextView
-        android:id="@+id/live_textView"
+        android:id="@+id/live_textView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/backgroundColor2"
@@ -18,68 +18,40 @@
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <GridLayout
-        android:id="@+id/live_gridView"
+    <GridView
+        android:id="@+id/movie_gridViewLivestreams2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:columnWidth="100dp"
-        android:drawSelectorOnTop="true"
-        android:focusable="true"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:numColumns="auto_fit"
-        android:rowCount="1"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/live_textView" />
+        android:numColumns="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/live_textView2">
 
-    <ProgressBar
-        android:id="@+id/live_progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+    </GridView>
 
     <TextView
-        android:id="@+id/movie_textView"
+        android:id="@+id/movie_textView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/backgroundColor2"
         android:text="@string/watch_moviesBar"
         android:textColor="@color/secondaryTextColor"
-        app:layout_constraintTop_toBottomOf="@+id/live_gridView" />
+        tools:layout_editor_absoluteY="24dp"
+        app:layout_constraintTop_toBottomOf="@id/movie_gridViewLivestreams2"
+        android:maxLines="1"/>
 
-    <GridLayout
-        android:id="@+id/movie_gridView"
+    <GridView
+        android:id="@+id/movie_gridViewMovies2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:columnWidth="100dp"
-        android:drawSelectorOnTop="true"
-        android:focusable="true"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="5dp"
+        android:numColumns="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_textView2">
 
-    <ProgressBar
-        android:id="@+id/movie_progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+    </GridView>
 
 </android.support.constraint.ConstraintLayout>

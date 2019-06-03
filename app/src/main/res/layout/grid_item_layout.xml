@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@color/backgroundColor2"
+    android:background="@color/backgroundColor"
     android:orientation="vertical"
     android:padding="5dp">
 
@@ -11,15 +11,14 @@
         android:id="@+id/grid_item_image"
         android:layout_width="100dp"
         android:scaleType="fitCenter"
-        android:layout_height="100dp" />
+        android:layout_height="150dp" />
 
     <TextView
         android:id="@+id/grid_item_label"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:layout_marginTop="5px"
-        android:textSize="15px" >
+        android:maxLines="1"
+        android:text="@+id/label" >
     </TextView>
 
 </LinearLayout>

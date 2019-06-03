@@ -1,20 +1,34 @@
 package com.toko.twitchflix;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+
 public class GridItemAdapter extends BaseAdapter {
     private Context context;
-    private final String[] mobileValues;
+    private final ArrayList<String> movieTitles;
+    private final ArrayList<String> movieIDs;
 
-    public GridItemAdapter(Context context, String[] mobileValues) {
+    public GridItemAdapter(Context context, ArrayList<String> movieTitles, ArrayList<String> movieIDs) {
         this.context = context;
-        this.mobileValues = mobileValues;
+        this.movieTitles = movieTitles;
+        this.movieIDs = movieIDs;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -23,6 +37,8 @@ public class GridItemAdapter extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View gridView;
+
+        final int pos = position;
 
         if (convertView == null) {
 
@@ -34,23 +50,31 @@ public class GridItemAdapter extends BaseAdapter {
             // set value into textview
             TextView textView = (TextView) gridView
                     .findViewById(R.id.grid_item_label);
-            textView.setText(mobileValues[position]);
+            textView.setText(movieTitles.get(position));
 
             // set image based on selected text
-            ImageView imageView = (ImageView) gridView
+            final ImageView imageView = (ImageView) gridView
                     .findViewById(R.id.grid_item_image);
 
-            String mobile = mobileValues[position];
+            String mobile = movieTitles.get(position);
 
-            if (mobile.equals("Windows")) {
-                imageView.setImageResource(R.drawable.ic_videocam_black_24dp);
-            } else if (mobile.equals("iOS")) {
-                imageView.setImageResource(R.drawable.ic_movie_black_24dp);
-            } else if (mobile.equals("Blackberry")) {
-                imageView.setImageResource(R.drawable.ic_search_black_24dp);
-            } else {
-                imageView.setImageResource(R.drawable.playcard);
-            }
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground (Void ... params) {
+                    try {
+                        String url = "http://" + Server.getIP() + ":" + Server.getPortMovies() + "/images/" + movieIDs.get(pos) + ".jpg";
+                        Bitmap mIcon11 = null;
+
+                        InputStream in = new java.net.URL(url).openStream();
+                        mIcon11 = BitmapFactory.decodeStream(in);
+                        imageView.setImageBitmap(mIcon11);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+            }.execute();
 
         } else {
             gridView = (View) convertView;
@@ -61,7 +85,7 @@ public class GridItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mobileValues.length;
+        return movieTitles.size();
     }
 
     @Override
@@ -73,5 +97,6 @@ public class GridItemAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return 0;
     }
+
 
 }
